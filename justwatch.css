@@ -1,0 +1,189 @@
+body {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background: linear-gradient(to bottom left, #221b22, #4f404f);
+  font-weight: 500;
+  color: #d07697 #221b22;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  font-size: 28px;
+  list-style-type: none;
+}
+
+.navigation a {
+  border-radius: 5px;
+  padding: 9px;
+}
+
+.navigation :hover {
+  background-color: #ada8b6;
+}
+
+p {
+  text-align: center;
+  color: white;
+}
+
+p :hover {
+  background-color: #4d3ef4;
+  border-radius: 5px;
+  padding: 9px;
+}
+
+a {
+  color: #ffeedb;
+  text-decoration: none;
+}
+
+.navigation-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.top-rated {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  align-items: center;
+  font-size: 20px;
+}
+
+.recently-released {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  align-items: center;
+  font-size: 20px;
+}
+
+.frontpage-movies {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  justify-content: center;
+}
+
+.head-image {
+  width: 250px;
+  border-radius: 35px;
+  filter: brightness(1.5);
+  margin: 7px;
+  margin-bottom: 35px;
+}
+
+.film-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.collections {
+  font-size: xx-large;
+  justify-content: center;
+}
+
+
+.poster-wrapper {
+  aspect-ratio: 3 /4;
+  display: block;
+  max-width: 100%;
+}
+
+article {
+  color: white;
+  flex: 1;
+  padding: 20px;
+  position: relative;
+}
+
+article::after {
+  content: counter(movie);
+  counter-increment: movie numeric;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  font-weight: 900;
+  font-size: 72px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.355);
+}
+
+article:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 5%);
+}
+
+.movie-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  counter-reset: movie;
+}
+
+.mobile-utilities {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .movie-wrapper {
+    flex-direction: row;
+    width: fit-content;
+  }
+
+
+  .navigation-right {
+    display: flex;
+  }
+
+  .head-image {
+    width: 120px;
+  }
+
+
+  .navigation {
+    display: none;
+  }
+
+  .navigation-right {
+    display: none;
+
+  }
+
+  .mobile-utilities {
+    display: flex;
+    gap: 25px;
+
+  }
+
+  article {
+    width: 160px;
+  }
+
+  .poster {
+    width: auto;
+    height: auto;
+  }
+
+  .scroll-wrapper {
+    max-width: 100%;
+    overflow: auto;
+  }
+
+}
